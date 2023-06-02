@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Silicon | Medical Landing</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Silicon - Multipurpose Technology Bootstrap Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon and Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://silicon.createx.studio/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://silicon.createx.studio/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://silicon.createx.studio/assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="https://silicon.createx.studio/assets/favicon/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="https://silicon.createx.studio/assets/favicon/safari-pinned-tab.svg"
+      color="#6366f1"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://silicon.createx.studio/assets/favicon/favicon.ico"
+    />
+    <meta name="msapplication-TileColor" content="#080032" />
+    <meta
+      name="msapplication-config"
+      content="https://silicon.createx.studio/assets/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Vendor Styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://silicon.createx.studio/assets/vendor/boxicons/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://silicon.createx.studio/assets/vendor/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://silicon.createx.studio/assets/vendor/lightgallery/css/lightgallery-bundle.min.css"
+    />
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://silicon.createx.studio/assets/css/theme.min.css"
+    />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        border-color: rgba(255, 255, 255, 0.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Theme mode -->
+    <script>
+      let mode = window.localStorage.getItem("mode"),
+        root = document.getElementsByTagName("html")[0];
+      if (mode !== null && mode === "dark") {
+        root.classList.add("dark-mode");
+      } else {
+        root.classList.remove("dark-mode");
+      }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WKV3GT5");
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header
+        class="header navbar navbar-expand-lg position-absolute navbar-sticky"
+      >
+        <div class="container d-flex justify-content-center justify-content-lg-start">
+          <a href="index.html">
+            <img
+              src="/logo.png"
+              width="300"
+              alt="Silicon"
+            />
+          </a>
+          <!-- <div
+            class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4"
+            data-bs-toggle="mode"
+          >
+            <input type="checkbox" class="form-check-input" id="theme-mode" />
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Light</label
+            >
+            <label class="form-check-label d-none d-sm-block" for="theme-mode"
+              >Dark</label
+            >
+          </div> -->
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class="position-relative pt-lg-5">
+        <div class="container position-relative zindex-5 pt-5">
+          <div class="row mt-4 pt-5">
+            <div
+              class="col-xl-4 col-lg-5 text-center text-lg-start pb-3 pb-md-4 pb-lg-0"
+            >
+              <h1 class="fs-xl text-uppercase">
+                Atendemos Particular e TODOS os planos de saúde e seguros que
+                possuem reembolso médico.
+              </h1>
+              <h3 class="display-5 pb-md-2 pb-lg-4">
+                Agende consulta imediata
+              </h3>
+              <p class="fs-lg">
+                Falar com a secretária no
+                <a href="#" class="fw-medium">whatsapp</a>
+              </p>
+            </div>
+            <div
+              class="col-xl-5 col-lg-6 offset-xl-1 position-relative zindex-5 mb-5 mb-lg-0"
+            >
+              <div
+                class="rellax card bg-primary border-0 shadow-primary py-2 p-sm-4 p-lg-5"
+                data-rellax-speed="-1"
+                data-disable-parallax-down="lg"
+              >
+                <div class="card-body p-lg-3">
+                  <h2 class="text-light pb-1 pb-md-3">
+                    Clínica Especializada em Reposição Hormonal na Asa Sul
+                  </h2>
+                  <p class="fs-lg text-light pb-2 pb-md-0 mb-4 mb-md-5">
+                    Recupere seu bem-estar com a reposição hormonal feminina. Se
+                    você tem sofrido com sintomas como fogachos, irritabilidade,
+                    insônia e perda de libido, saiba que existem opções seguras
+                    e eficazes para aliviar esses incômodos. Com a reposição
+                    hormonal, é possível restabelecer os níveis de hormônios
+                    femininos e melhorar a qualidade de vida.
+                  </p>
+                  <a href="#" class="btn btn-success btn-lg w-100">
+                    Falar com a secretária no whatsapp
+                    <i class="bx bx-right-arrow-alt lh-1 fs-4 ms-2 me-n2"></i>
+                  </a>
+                  <a href="#" class="btn btn-secondary btn-lg mt-3 w-100">
+                    Ligar (61) 3208-5244
+                    <i class="bx bx-right-arrow-alt lh-1 fs-4 ms-2 me-n2"></i>
+                  </a>
+                  <p
+                    class="fs-lg text-light pb-2 pb-md-0 mb-4 mb-md-5 mt-5 text-center"
+                  >
+                    ESTACIONAMENTO GRATUITO, FALE COM NOSSA SECRETÁRIA
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-lg-block"></div>
+          <div class="row align-items-end">
+            <div class="col-lg-6 d-none d-lg-block">
+              <img
+                src="https://silicon.createx.studio/assets/img/landing/medical/hero-img-2.jpg"
+                class="rellax rounded-3"
+                alt="Image"
+                data-rellax-speed="1.35"
+                data-disable-parallax-down="md"
+              />
+            </div>
+            <div
+              class="col-lg-6 d-flex flex-column flex-md-row align-items-center w-100 justify-content-center"
+            >
+              <div class="d-flex align-items-center ps-xl-5 mb-4 mb-md-0 flex-column flex-md-row">
+                <div
+                  class="btn btn-icon btn-secondary btn-lg pe-none rounded d-lg-none d-xl-inline-flex"
+                >
+                  <i class="bx bx-time text-primary fs-3"></i>
+                </div>
+                <ul class="list-unstyled ps-3 ps-lg-0 ps-xl-3 mb-0">
+                  <li>Horários, agendamentos, dúvidas, etc.</li>
+                  <li>Nossa equipe está pronta para te atender.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-none d-lg-block position-absolute top-0 end-0 w-50 d-flex flex-column ps-3"
+          style="height: calc(100% - 108px)"
+        >
+          <div
+            class="w-100 h-100 overflow-hidden bg-position-center bg-repeat-0 bg-size-cover"
+            style="
+              background-image: url(https://silicon.createx.studio/assets/img/landing/medical/hero-img-1.jpg);
+              border-bottom-left-radius: 0.5rem;
+            "
+          ></div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+          <div class="col-xxl-8 col-xl-9 col-lg-10 pt-sm-2 pt-md-5">
+            <div class="d-sm-flex">
+              <div
+                class="d-flex flex-column w-sm-50 border-0 bg-transparent text-center px-sm-1 px-md-5 pb-3 pb-sm-0 mb-4 mb-sm-0"
+              >
+                <div class="card-body p-0">
+                  <div
+                    class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3"
+                  >
+                    <i class="bx bx-phone-call"></i>
+                  </div>
+                  <p class="pb-2 pb-sm-3 mb-3">
+                    Please feel free to drop us a line. We will respond as soon
+                    as possible.
+                  </p>
+                </div>
+                <div class="card-footer border-0 p-0">
+                  <a
+                    href="mailto:email@example.com"
+                    class="btn btn-lg btn-success w-100" style="min-width: 300px;"
+                    >Falar com a secretária no whatsapp</a
+                  >
+                </div>
+              </div>
+              <div class="vr text-border d-none d-sm-inline-block m-4"></div>
+              <div
+                class="card w-sm-50 border-0 bg-transparent text-center px-sm-1 px-md-5"
+              >
+                <div class="card-body p-0">
+                  <div
+                    class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3"
+                  >
+                    <i class="bx bx-phone-call"></i>
+                  </div>
+                  <p class="pb-2 pb-sm-3 mb-3">
+                    If you need immediate assistance feel free to call us any
+                    time.
+                  </p>
+                </div>
+                <div class="card-footer border-0 p-0">
+                  <a href="tel:4065550120" class="btn btn-lg btn-primary w-100" style="min-width: 300px;"
+                    >Ligar (61) 3208-5244</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section class="container pt-xl-2 pb-5 mb-md-3 mb-lg-5">
+        <div
+          class="d-md-flex align-items-center justify-content-between text-center text-md-start pb-1 pb-lg-0 mb-4 mb-lg-5"
+        >
+          <h2 class="h1 mb-md-0">Foco na medicina preventiva e longevidade</h2>
+        </div>
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center"
+        >
+          <!-- Item -->
+          <div class="col">
+            <div class="card card-hover border-0 bg-transparent">
+              <div class="position-relative">
+                <img
+                  src="/fc1.png"
+                  class="rounded-3"
+                  alt="Dr. Ronald Richards"
+                />
+              </div>
+              <div class="card-body text-center p-3">
+                <h3 class="fs-lg fw-semibold pt-1 mb-2">Alimentação</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="col">
+            <div class="card card-hover border-0 bg-transparent">
+              <div class="position-relative">
+                <img src="/fc2.png" class="rounded-3" alt="Dr. Esther Howard" />
+              </div>
+              <div class="card-body text-center p-3">
+                <h3 class="fs-lg fw-semibold pt-1 mb-2">Manejo do estresse</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="col">
+            <div class="card card-hover border-0 bg-transparent">
+              <div class="position-relative">
+                <img src="fc3.png" class="rounded-3" alt="Dr. Jerome Bell" />
+              </div>
+              <div class="card-body text-center p-3">
+                <h3 class="fs-lg fw-semibold pt-1 mb-2">Atividade física</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="col">
+            <div class="card card-hover border-0 bg-transparent">
+              <div class="position-relative">
+                <img src="fc4.png" class="rounded-3" alt="Dr. Ralph Edwards" />
+              </div>
+              <div class="card-body text-center p-3">
+                <h3 class="fs-lg fw-semibold pt-1 mb-2">
+                  Suplementação Nutricional
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="col">
+            <div class="card card-hover border-0 bg-transparent">
+              <div class="position-relative">
+                <img
+                  src="fc5.png"
+                  class="rounded-3"
+                  alt="Dr. Darrell Steward"
+                />
+              </div>
+              <div class="card-body text-center p-3">
+                <h3 class="fs-lg fw-semibold pt-1 mb-2">Sono</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container pb-2 pb-md-4 pb-lg-5 mb-3">
+        <div class="row row-cols-1 row-cols-md-2">
+          <!-- Item -->
+          <div class="col py-4 my-2 my-sm-3">
+            <a
+              href="services-single-v1.html"
+              class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2"
+            >
+              <div class="card-body pt-3">
+                <div
+                  class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3"
+                >
+                  <img
+                    src="https://silicon.createx.studio/assets/img/services/icons/analytics.svg"
+                    class="d-block m-1"
+                    width="40"
+                    alt="Icon"
+                  />
+                </div>
+                <h2 class="h4 d-inline-flex align-items-center">
+                  Equipamentos de Ponta
+                  <i
+                    class="bx bx-right-arrow-circle text-primary fs-3 ms-2"
+                  ></i>
+                </h2>
+                <p class="fs-sm text-body mb-0">
+                  NMateriais e equipamentos do mais alto nível.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item -->
+          <div class="col py-4 my-2 my-sm-3">
+            <a
+              href="services-single-v1.html"
+              class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2"
+            >
+              <div class="card-body pt-3">
+                <div
+                  class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3"
+                >
+                  <img
+                    src="https://silicon.createx.studio/assets/img/services/icons/web-search.svg"
+                    class="d-block m-1"
+                    width="40"
+                    alt="Icon"
+                  />
+                </div>
+                <h2 class="h4 d-inline-flex align-items-center">
+                  PROFISSIONAL CAPACITADO
+                  <i
+                    class="bx bx-right-arrow-circle text-primary fs-3 ms-2"
+                  ></i>
+                </h2>
+                <p class="fs-sm text-body mb-0">
+                  Dra. Mileny Chamizo, médica especializada em ciência da
+                  longevidade humana.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item -->
+          <div class="col py-4 my-2 my-sm-3">
+            <a
+              href="services-single-v1.html"
+              class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2"
+            >
+              <div class="card-body pt-3">
+                <div
+                  class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3"
+                >
+                  <img
+                    src="https://silicon.createx.studio/assets/img/services/icons/mobile-app.svg"
+                    class="d-block m-1"
+                    width="40"
+                    alt="Icon"
+                  />
+                </div>
+                <h2 class="h4 d-inline-flex align-items-center">
+                  ATENDIMENTO PERSONALIZADO
+                  <i
+                    class="bx bx-right-arrow-circle text-primary fs-3 ms-2"
+                  ></i>
+                </h2>
+                <p class="fs-sm text-body mb-0">
+                  Avaliação e foco nas necessidades de cada
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item -->
+          <div class="col py-4 my-2 my-sm-3">
+            <a
+              href="services-single-v1.html"
+              class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2"
+            >
+              <div class="card-body pt-3">
+                <div
+                  class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3"
+                >
+                  <img
+                    src="https://silicon.createx.studio/assets/img/services/icons/timer.svg"
+                    class="d-block m-1"
+                    width="40"
+                    alt="Icon"
+                  />
+                </div>
+                <h2 class="h4 d-inline-flex align-items-center">
+                  AMBIENTE PREMIUM
+                  <i
+                    class="bx bx-right-arrow-circle text-primary fs-3 ms-2"
+                  ></i>
+                </h2>
+                <p class="fs-sm text-body mb-0">
+                  Agradável e acolhedor pensando em você.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container pt-2 pt-lg-0 pb-5 mb-md-4 mb-lg-5">
+        <h2 class="h1 text-center pb-3 pb-lg-4">Tratamentos</h2>
+
+        <!-- Nav tabs -->
+        <ul
+          class="nav nav-tabs flex-wrap justify-content-lg-center overflow-auto pb-2 mb-3 mb-lg-4"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap active"
+              id="education-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#education"
+              type="button"
+              role="tab"
+              aria-controls="education"
+              aria-selected="true"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Saúde Sexual da mulher
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="ecommerce-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ecommerce"
+              type="button"
+              role="tab"
+              aria-controls="ecommerce"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Menopausa
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="sports-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sports"
+              type="button"
+              role="tab"
+              aria-controls="sports"
+              aria-selected="false"
+            >
+              <i class="bx bx-run fs-xl opacity-60 me-2"></i>
+              Sports
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="construction-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#construction"
+              type="button"
+              role="tab"
+              aria-controls="construction"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              TPM
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="medicine-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#medicine"
+              type="button"
+              role="tab"
+              aria-controls="medicine"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Enxaqueca
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="real-estate-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#real-estate"
+              type="button"
+              role="tab"
+              aria-controls="real-estate"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Redução da libído
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="wellness-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#wellness"
+              type="button"
+              role="tab"
+              aria-controls="wellness"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Endometriose
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link text-nowrap"
+              id="wellness-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#wellness"
+              type="button"
+              role="tab"
+              aria-controls="wellness"
+              aria-selected="false"
+            >
+              <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+              Cólica Menstrual
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="pb-5" style="padding-top: 80px">
+        <div class="bg-secondary pb-lg-4 pb-xl-5">
+          <div class="container pb-4 pb-md-5">
+            <div class="row">
+              <div class="col-xl-5 col-lg-6" style="margin-top: -80px">
+                <!-- Swiper tabs -->
+                <div class="swiper-tabs mx-auto" style="max-width: 526px">
+                  <div id="image-1" class="swiper-tab active">
+                    <img src="/dt1.jpg" class="rounded-3" alt="Image" />
+                  </div>
+                  <div id="image-2" class="swiper-tab">
+                    <img src="/dt2.png" class="rounded-3" alt="Image" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-5 col-lg-6 offset-xl-1 pt-2 pt-md-4 pt-lg-5 mt-4"
+              >
+                <!-- Slider prev/next buttons -->
+                <div
+                  class="d-flex justify-content-center justify-content-lg-start pb-3 mb-3"
+                >
+                  <button
+                    type="button"
+                    id="prev"
+                    class="btn btn-prev btn-icon btn-sm me-2"
+                  >
+                    <i class="bx bx-chevron-left"></i>
+                  </button>
+                  <button
+                    type="button"
+                    id="next"
+                    class="btn btn-next btn-icon btn-sm ms-2"
+                  >
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </div>
+
+                <!-- Swiper slider -->
+                <div
+                  class="swiper mx-0 mb-md-n2 mb-xxl-n3"
+                  data-swiper-options='{
+                  "spaceBetween": 30,
+                  "loop": true,
+                  "tabs": true,
+                  "navigation": {
+                    "prevEl": "#prev",
+                    "nextEl": "#next"
+                  }
+                }'
+                >
+                  <div class="swiper-wrapper text-center text-lg-start">
+                    <!-- Item -->
+                    <div class="swiper-slide pb-4" data-swiper-tab="#image-1">
+                      <h2 class="h1 mb-4">
+                        Venha fazer uma
+                        <span class="text-success">consulta</span> conosco
+                      </h2>
+                      <p class="pb-2 pb-xl-0 mb-4 mb-xl-5">
+                        Endereço: SGAS 915 Conjunto N Sala 363 - Centro Clínico
+                        Advance - Asa Sul - Brasília - DF
+                      </p>
+                      <a href="#" class="btn btn-success btn-lg shadow-success"
+                        >Falar com a secretária no whatsapp</a
+                      >
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide pb-4" data-swiper-tab="#image-2">
+                      <h2 class="h1 mb-3">Dra. Mileny</h2>
+                      <h2 class="h1 mb-4">
+                        CRM
+                        <span class="text-danger">27044 DF</span>
+                      </h2>
+                      <p class="pb-2 pb-xl-0 mb-3 mb-xl-3">
+                        Formada em medicina pela Escola Superior de Ciências da
+                        Saúde - ESCS DF.
+                      </p>
+                      <p class="pb-2 pb-xl-0 mb-3 mb-xl-3">
+                        Especialização em nutrologia USP-RP.
+                      </p>
+                      <p class="pb-2 pb-xl-0 mb-3 mb-xl-3">
+                        Formada pelo grupo Longevidade Humana no Brasil.
+                      </p>
+                      <a href="#" class="btn btn-danger btn-lg shadow-danger"
+                        >Falar com a secretária no whatsapp</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mb-1 mb-md-3 mb-lg-4">
+        <div class="bg-secondary rounded-3 overflow-hidden">
+          <div class="row align-items-center">
+            <div class="col-xl-4 col-md-5 offset-lg-1">
+              <div
+                class="pt-5 pb-3 pb-md-5 px-4 px-lg-0 text-center text-md-start"
+              >
+                <p class="lead mb-3">Procedimentos</p>
+                <p class="d-flex align-items-center">
+                  <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+                  <span>Consulta médica;</span>
+                </p>
+                <p class="d-flex align-items-center">
+                  <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+                  <span>Terapias injetáveis e soroterapia;</span>
+                </p>
+                <p class="d-flex align-items-center">
+                  <i class="bx bx-spa fs-lg opacity-60 me-2"></i>
+                  <span>mplantes hormonais e não hormonais;</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-7 offset-xl-1">
+              <div
+                class="position-relative d-flex flex-column align-items-center justify-content-center h-100"
+              >
+                <svg
+                  class="d-none d-md-block position-absolute top-50 start-0 translate-middle-y"
+                  width="868"
+                  height="868"
+                  style="min-width: 868px"
+                  viewBox="0 0 868 868"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    opacity="0.15"
+                    cx="434"
+                    cy="434"
+                    r="434"
+                    fill="#6366F1"
+                  />
+                </svg>
+                <img
+                  src="/proc.jpg"
+                  class="position-relative zindex-3 mb-2 my-lg-4 rounded-circle"
+                  width="382"
+                  alt="Illustration"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container pb-5 mb-2 mb-md-4 mb-lg-5 mt-n2">
+        <div
+          class="d-flex align-items-center justify-content-between pb-4 mb-2"
+        >
+          <h2 class="h1 mb-0">We are Powerful</h2>
+        </div>
+        <div class="gallery row g-4" data-video="true" data-thumbnails="true">
+          <div class="col-md-5">
+            <a
+              href="https://video.wixstatic.com/video/441797_a6b0afd2320b4a1bb9eb1ca7530bfeb4/1080p/mp4/file.mp4?autoplay=0&playsinline=1&controls=1&showinfo=0&rel=0"
+              class="gallery-item video-item is-hovered rounded-3"
+              data-sub-html='<h6 class="fs-sm text-light">Silicon Inc. Showreel by Marvin McKinney</h6>'
+            >
+              <img src="/0.png" alt="Gallery thumbnail" />
+              <div class="gallery-item-caption p-4">
+                <h4 class="text-light mb-1">Silicon Inc.</h4>
+                <p class="mb-0">Showreel by Marvin McKinney</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-5">
+            <a
+              href="/1.png"
+              class="gallery-item rounded-3 mb-4"
+              data-sub-html='<h6 class="fs-sm text-light">Program for apprentices</h6>'
+            >
+              <img src="/1.png" alt="Gallery thumbnail" />
+              <div class="gallery-item-caption fs-sm fw-medium">
+                Program for apprentices
+              </div>
+            </a>
+            <a
+              href="/2.png"
+              class="gallery-item rounded-3"
+              data-sub-html='<h6 class="fs-sm text-light">Modern bright offices</h6>'
+            >
+              <img src="/2.png" alt="Gallery thumbnail" />
+              <div class="gallery-item-caption fs-sm fw-medium">
+                Modern bright offices
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-7">
+            <a
+              href="/3.png"
+              class="gallery-item rounded-3 mb-4"
+              data-sub-html='<h6 class="fs-sm text-light">Friendly professional team</h6>'
+            >
+              <img src="/3.png" alt="Gallery thumbnail" />
+              <div class="gallery-item-caption fs-sm fw-medium">
+                Friendly professional team
+              </div>
+            </a>
+            <a
+              href="/4.png"
+              class="gallery-item rounded-3"
+              data-sub-html='<h6 class="fs-sm text-light">Efficient project management</h6>'
+            >
+              <img src="/4.png" alt="Gallery thumbnail" />
+              <div class="gallery-item-caption fs-sm fw-medium">
+                Efficient project management
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (Accordion) -->
+      <section class="container mb-5">
+        <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-md-0">
+          <h2 class="text-center pt-md-1 pt-lg-3 pt-xl-4 pb-4 mt-xl-1 mb-2">
+            O que é nutrologia?
+          </h2>
+          <div class="row justify-content-center pb-lg-4 pb-xl-5">
+            <div class="col-xl-8 col-lg-9 col-md-10 pb-md-2">
+              <div class="accordion" id="faq">
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-1"
+                      aria-expanded="true"
+                      aria-controls="q-1"
+                    >
+                      O que é nutrologia?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse show"
+                    id="q-1"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        É a especialidade médica que estuda a relação entre os
+                        nutrientes e o desenvolvimento de doenças. A consulta
+                        médica permite: prevenção, diagnóstico e tratamento de
+                        diversas patologias, entre elas: intolerâncias
+                        alimentares, compulsão alimentar, doenças metabólicas
+                        relacionadas a obesidade (hipertensão arterial
+                        sistêmica, hipogonadismo, diabetes mellitos e síndrome
+                        metabólica).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-2"
+                      aria-expanded="false"
+                      aria-controls="q-2"
+                    >
+                      Como é a consulta?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-2"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        Na primeira consulta é realizada a anamnese do paciente,
+                        juntamente com exame físico, bioimpedância e solicitação
+                        dos exames complementares necessários.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-3"
+                      aria-expanded="false"
+                      aria-controls="q-3"
+                    >
+                      O que são implantes hormonais absorvíveis?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-3"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        São pequenos tubos com substância ativa, que são
+                        inseridos sob a pele (tecido subcutâneo), que liberam na
+                        corrente sanguínea, de forma gradual, medicações
+                        hormonais ou não hormonais.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-4"
+                      aria-expanded="false"
+                      aria-controls="q-4"
+                    >
+                      Quais os benefícios dos implantes hormonais subcutâneos?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-4"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        Melhora da disposição física, libido, redução de
+                        celulite, ganho de massa magra quando aliado a prática
+                        de atividade física e dieta, tratamento de doenças
+                        ginecológicas hormônio dependentes (TPM, miomas,
+                        endometriose, adenomiose e reposição hormonal na
+                        menopausa).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-5"
+                      aria-expanded="false"
+                      aria-controls="q-5"
+                    >
+                      Os implantes geram efeitos colaterais?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-5"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        Como todo o método hormonal, também têm possíveis
+                        efeitos colaterais - tratáveis e reversíveis - como:
+                        piora da oleosidade da pele, acne e queda de cabelo (a
+                        depender a dose).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-6"
+                      aria-expanded="false"
+                      aria-controls="q-6"
+                    >
+                      O que é medicina preventiva?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-6"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        “O custo do cuidado é sempre menor do que o custo do
+                        reparo”. Por que esperar a doença chegar para agir? É a
+                        medicina com foco na saúde, otimização da imunidade e
+                        tratamento dos desequilíbrios hormonais.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button shadow-none rounded-3 collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#q-7"
+                      aria-expanded="false"
+                      aria-controls="q-7"
+                    >
+                      O que são terapias com injetáveis?
+                    </button>
+                  </h3>
+                  <div
+                    class="accordion-collapse collapse"
+                    id="q-7"
+                    data-bs-parent="#faq"
+                  >
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        É a administração de nutrientes, vitaminas, minerais,
+                        antioxidantes, por meio de aplicações venosas
+                        (soroterapia) ou musculares.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacts -->
+      <section class="container pb-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+          <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+            <div class="gallery rounded-3 shadow-sm">
+              <a
+                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17239.8060668495!2d-122.43668227971098!3d37.741526659411576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e1259a3ed73%3A0xaae7371cd8db1e38!2sNoe%20Valley%20Bakery!5e0!3m2!1sen!2sua!4v1637757959377!5m2!1sen!2sua"
+                data-iframe="true"
+                class="gallery-item rounded-3"
+                data-sub-html='<h6 class="fs-sm text-light">Noe Valley Bakery 24th Street, San Francisco, CA, USA</h6>'
+              >
+                <i
+                  class="bx bxs-map text-primary display-5 position-absolute top-50 start-50 translate-middle mb-0"
+                ></i>
+                <img
+                  src="https://silicon.createx.studio/assets/img/landing/medical/map.jpg"
+                  alt="Map cover"
+                />
+                <div class="gallery-item-caption fs-sm fw-medium">
+                  Expand the map
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-5 col-md-6 offset-xl-1">
+            <h2 class="h1 pb-4 mb-1 mb-lg-3">Endereço:</h2>
+            <ul class="list-unstyled pb-3 mb-0 mb-lg-3">
+              <li class="d-flex mb-3">
+                <i class="bx bx-map text-muted fs-xl mt-1 me-2"></i>
+                SGAS 915 Conjunto N Sala 363 - Centro Clínico Advance - Asa Sul
+              </li>
+              <li class="d-flex mb-3">
+                <i class="bx bx-phone-call text-muted fs-xl mt-1 me-2"></i>
+                (61) 99119-9479
+              </li>
+              <li class="d-flex mb-3">
+                <i class="bx bx-phone-call text-muted fs-xl mt-1 me-2"></i>
+                (61) 3208-5244
+              </li>
+              <li class="d-flex mb-3">
+                <i class="bx bx-envelope text-muted fs-xl mt-1 me-2"></i>
+                example@email.com
+              </li>
+            </ul>
+            <a href="#" class="btn btn-success shadow-success btn-lg"
+              >Falar com a secretária no whatsapp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-5 pb-4 pb-lg-5">
+      <div class="container pt-lg-4">
+        <div class="row pb-3">
+          <div class="col-12">
+            <div
+              class="navbar-brand text-dark p-0 me-0 justify-content-center"
+            >
+              <img
+                src="/logo.png"
+                width="300"
+                alt="Silicon"
+              />
+            </div>
+          </div>
+        </div>
+        <p class="nav d-block fs-xs pb-2 pb-lg-0 mb-0 text-center">
+          &copy; Todos os direitos resevados
+          <a class="nav-link d-inline-block p-0" target="_blank" rel="noopener"
+            >BIO AISTHESIS</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    <!-- Vendor Scripts -->
+    <script src="https://silicon.createx.studio/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/rellax/rellax.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://silicon.createx.studio/assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="https://silicon.createx.studio/assets/js/theme.min.js"></script>
+  </body>
+</html>
